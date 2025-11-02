@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Stock Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Smart Stock</h2>
+    <ul class="menu">
+      <li data-section="dashboard" class="active">Dashboard</li>
+      <li data-section="products">Products</li>
+      <li data-section="suppliers">Suppliers</li>
+      <li data-section="reports">Reports</li>
+      <li data-section="settings">Settings</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="topbar">
+      <h1>Dashboard</h1>
+      <input type="text" placeholder="Search...">
+    </div>
+
+    <!-- Dashboard -->
+    <section class="section active" id="dashboard">
+      <div class="chart-container">
+        <canvas id="stockChart"></canvas>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="section" id="products">
+      <h2>Manage Products</h2>
+      <div class="product-layout">
+        <div class="form-side">
+          <h3>Add New Product</h3>
+          <input type="text" id="productName" placeholder="Product Name">
+          <input type="number" id="productPrice" placeholder="Price">
+          <input type="number" id="productStock" placeholder="Stock Quantity">
+          <input type="text" id="productSupplier" placeholder="Supplier">
+          <button id="addProduct">Add Product</button>
+        </div>
+
+        <div class="table-side">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Supplier</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="productTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Suppliers -->
+    <section class="section" id="suppliers">
+      <h2>Manage Suppliers</h2>
+      <div class="supplier-layout">
+        <div class="form-side">
+          <h3>Add Supplier</h3>
+          <input type="text" id="supplierName" placeholder="Supplier Name">
+          <input type="text" id="supplierContact" placeholder="Contact Email">
+          <input type="date" id="supplierDate">
+          <button id="addSupplier">Add Supplier</button>
+        </div>
+        <div class="table-side">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Last Supply</th>
+              </tr>
+            </thead>
+            <tbody id="supplierTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reports"><h2>Reports Section</h2></section>
+    <section class="section" id="settings"><h2>Settings Section</h2></section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
